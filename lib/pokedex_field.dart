@@ -12,8 +12,8 @@ class PokedexField extends StatelessWidget {
     super.key,
     required this.child,
     this.borderColor = Colors.white,
-    this.thickness = 2.0,
-    this.offset = 4.0,
+    this.thickness = 2.5,
+    this.offset = 2.0,
     this.width = 150,
     this.height = 30,
   });

@@ -8,6 +8,15 @@ class PokedexCard extends StatelessWidget {
   final String type;
   final String dexNumber;
   final String level;
+  final String species;
+  final String hp;
+  final String attack;
+  final String defense;
+  final String specialAttack;
+  final String specialDefense;
+  final String resistance;
+  final String weakness;
+  final String nextEvolution;
   final String imagePath;
   final double imageHeight;
   final BoxFit imageFit;
@@ -18,6 +27,15 @@ class PokedexCard extends StatelessWidget {
     required this.type,
     required this.dexNumber,
     required this.level,
+    required this.species,
+    required this.hp,
+    required this.attack,
+    required this.defense,
+    required this.specialAttack,
+    required this.specialDefense,
+    required this.resistance,
+    required this.weakness,
+    required this.nextEvolution,
     required this.imagePath,
     this.imageHeight = 150,
     this.imageFit = BoxFit.contain,
@@ -84,12 +102,12 @@ class PokedexCard extends StatelessWidget {
               children: [
                 PokedexLabelField(
                   label: 'Species',
-                  value: dexNumber,
+                  value: species,
                   fieldWidth: 150,
                 ),
                 PokedexLabelField(
-                  label: 'Gender',
-                  value: level,
+                  label: '♀ ♂ ⚧',
+                  value: '♂',
                   fieldWidth: 150,
                 ),
               ],
@@ -102,17 +120,17 @@ class PokedexCard extends StatelessWidget {
               children: [
                 PokedexLabelField(
                   label: 'HP',
-                  value: dexNumber,
+                  value: hp,
                   fieldWidth: 100,
                 ),
                 PokedexLabelField(
                   label: 'Attack',
-                  value: level,
+                  value: attack,
                   fieldWidth: 100,
                 ),
                 PokedexLabelField(
                   label: 'Defense',
-                  value: level,
+                  value: defense,
                   fieldWidth: 100,
                 ),
               ],
@@ -123,12 +141,12 @@ class PokedexCard extends StatelessWidget {
               children: [
                 PokedexLabelField(
                   label: 'Special\nAttack',
-                  value: dexNumber,
+                  value: specialAttack,
                   fieldWidth: 150,
                 ),
                 PokedexLabelField(
                   label: 'Special\nDefense',
-                  value: level,
+                  value: specialDefense,
                   fieldWidth: 150,
                 ),
               ],
@@ -141,12 +159,12 @@ class PokedexCard extends StatelessWidget {
               children: [
                 PokedexLabelField(
                   label: 'Resistance',
-                  value: dexNumber,
+                  value: resistance,
                   fieldWidth: 150,
                 ),
                 PokedexLabelField(
                   label: 'Weakness',
-                  value: level,
+                  value: weakness,
                   fieldWidth: 150,
                 ),
               ],
@@ -158,7 +176,7 @@ class PokedexCard extends StatelessWidget {
                 Expanded(
                   child: PokedexLabelField(
                     label: 'Next Evolution',
-                    value: dexNumber,
+                    value: nextEvolution,
                     fieldWidth: 150,
                   ),
                 ),
@@ -181,7 +199,7 @@ class PokedexCard extends StatelessWidget {
                 Expanded(
                   child: PokedexLabelField(
                     label: '',
-                    value: level,
+                    value: 'Electric Stone',
                     fieldWidth: 150,
                   ),
                 ),

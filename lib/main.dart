@@ -26,23 +26,23 @@ class PokedexScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF002A66),
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.of(context).pop(); 
-          },
+        title: Padding(
+          padding: const EdgeInsets.only(top: 30),
+          child: const Text(
+            "←",
+            style: TextStyle(
+              fontFamily: 'PressStart2P',
+              fontSize: 28,
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
         ),
+        centerTitle: false, 
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 40),
-          child: PokedexCard(
-            name: "Pikachu",
-            type: "Electric",
-            dexNumber: "19",
-            level: "25",
-            imagePath: 'assets/img/pikachu.png',
-          ),
+          padding: const EdgeInsets.fromLTRB(16, 40, 16, 40),
+          child: PokedexCard(name: "Pikachu", type: "Electric", dexNumber: "025", level: "16", species: "Mouse", hp: "56", attack: "55", defense: "40", specialAttack: "50", specialDefense: "50", resistance: "Water", weakness: "Rock", nextEvolution: "Raichu", imagePath: 'assets/img/pikachu.png')
         ),
       ),
     );
