@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex_app/pokedex_field.dart'; // or wherever you keep your pixel border
+import 'package:pokedex_app/pokedex_field.dart'; 
 
 class PokedexLabelField extends StatelessWidget {
   final String label;
@@ -20,17 +20,16 @@ class PokedexLabelField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Label
+
         Text(
           label,
           style: const TextStyle(
             fontFamily: 'PressStart2P',
             fontSize: 12,
-            color: Color(0xFFFFE545), // Yellow
+            color: Color(0xFFFFE545),
           ),
         ),
         const SizedBox(height: 4),
-        // Value field
         PokedexField(
           width: fieldWidth,
           height: fieldHeight,

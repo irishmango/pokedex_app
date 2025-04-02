@@ -155,7 +155,6 @@ class PokedexCard extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                // First box
                 Expanded(
                   child: PokedexLabelField(
                     label: 'Next Evolution',
@@ -163,8 +162,6 @@ class PokedexCard extends StatelessWidget {
                     fieldWidth: 150,
                   ),
                 ),
-
-                // Arrow centered between boxes
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8.0, left: 8.0, right: 8.0),
                   child: Column(
@@ -175,14 +172,12 @@ class PokedexCard extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'PressStart2P',
                           fontSize: 12,
-                          color: Color(0xFFFFE545),
+                          color: Color.fromARGB(255, 255, 255, 255),
                         ),
                       ),
                     ],
                   ),
                 ),
-
-                // Second box
                 Expanded(
                   child: PokedexLabelField(
                     label: '',
