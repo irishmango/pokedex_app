@@ -1,0 +1,176 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(PokedexApp());
+
+class PokedexApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Pokedex',
+      debugShowCheckedModeBanner: false,
+      home: PokedexScreen(),
+    );
+  }
+}
+
+class PokedexScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
+      body: SafeArea(
+        child: Column(
+          children: [
+            // Header
+            Container(
+              color: Colors.red,
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Row(
+                children: [
+                  Text(
+                    'POKÉDEX',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Spacer(),
+                  CircleAvatar(backgroundColor: Colors.blue, radius: 10),
+                  SizedBox(width: 8),
+                  CircleAvatar(backgroundColor: Colors.red, radius: 10),
+                ],
+              ),
+            ),
+
+            Expanded(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    // Pokémon Image & Basic Info
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/pikachu.png', // or use Image.network(...)
+                          width: 80,
+                          height: 80,
+                        ),
+                        SizedBox(width: 16),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              infoRow("Pokémon", "Pikachu"),
+                              infoRow("Type", "Electric"),
+                              infoRow("Level", "25"),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 16),
+
+                    // Dex, Species, Gender
+                    Row(
+                      children: [
+                        Expanded(child: infoRow("National Dex Number", "55")),
+                        Expanded(child: infoRow("Species", "Mouse Pokémon")),
+                        Expanded(child: infoRow("Gender", "Mouse Pokémon")),
+                      ],
+                    ),
+                    Divider(height: 32),
+
+                    // Stats
+                    Wrap(
+                      spacing: 16,
+                      runSpacing: 12,
+                      children: [
+                        statBox("HP", "25"),
+                        statBox("Attack", "32"),
+                        statBox("Defense", "55"),
+                        statBox("Special Attack", "24"),
+                        statBox("Special Defense", "38"),
+                        statBox("Speed", "62"),
+                        statBox("Base Stat Total", "52"),
+                      ],
+                    ),
+                    Divider(height: 32),
+
+                    // Resistance / Weakness
+                    Row(
+                      children: [
+                        Expanded(child: infoRow("Resistance", "Rock")),
+                        Expanded(child: infoRow("Weakness", "Water")),
+                      ],
+                    ),
+                    Divider(height: 32),
+
+                    // Next Evolution
+                    Row(
+                      children: [
+                        Text("Next Evolution:"),
+                        SizedBox(width: 8),
+                        Text("Rock →"),
+                        SizedBox(width: 8),
+                        Text("Lvl: 32"),
+                      ],
+                    ),
+                    SizedBox(height: 16),
+
+                    // Catch Rate
+                    infoRow("Catch Rate", "44"),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget infoRow(String label, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4),
+      child: Row(
+        children: [
+          Text(
+            "$label: ",
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Expanded(
+            child: Text(value),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget statBox(String label, String value) {
+    return Container(
+      width: 150,
+      padding: EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.black),
+        borderRadius: BorderRadius.circular(4),
+        color: Colors.white,
+      ),
+      child: Column(
+        children: [
+          Text(
+            label,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Text(value),
+        ],
+      ),
+    );
+  }
+}ontext) {
+    return MaterialApp(
+      title: 'Pokedex',
+      debugShowCheckedModeBanner: false,
+      home: PokedexScreen(),
+    );
+  }
