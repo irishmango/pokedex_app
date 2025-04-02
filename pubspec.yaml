@@ -26,6 +26,8 @@ flutter:
     - assets/img/pikachu.png
     - assets/img/pokeball.png
 
+    - assets/pokedata.json
+
   fonts:
     - family: PressStart2P
       fonts:
