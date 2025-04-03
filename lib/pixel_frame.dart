@@ -20,6 +20,7 @@ class PixelFrame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      clipBehavior: Clip.none,
       children: [
         // Top border
         Positioned(
@@ -39,6 +40,16 @@ class PixelFrame extends StatelessWidget {
           child: Container(
             height: thickness,
             color: borderColor,
+          ),
+        ),
+        // Bottom shadow
+        Positioned(
+          bottom: -5,
+          left: offset,
+          right: offset,
+          child: Container(
+            height: thickness,
+            color: shadowColor,
           ),
         ),
         // Left border
@@ -63,19 +74,30 @@ class PixelFrame extends StatelessWidget {
         ),
         // Right shadow
         Positioned(
-          top: offset,
+          top: 16,
           bottom: offset,
-          right: 4,
+          right: -5,
           child: Container(
             width: thickness,
             color: shadowColor,
           ),
         ),
-        // Content
+        // Content & background image
         Positioned.fill(
           child: Padding(
             padding: EdgeInsets.all(thickness),
-            child: child,
+            child: Stack(
+              children: [
+                Center(
+                  child: Image.asset(
+                    'assets/img/pokeball_8bit_bw.png',
+                    width: 500, 
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                child,
+              ],
+            ),
           ),
         ),
       ],
