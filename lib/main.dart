@@ -10,7 +10,6 @@ class PokedexApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pokedex',
-      debugShowCheckedModeBanner: false,
       home: const PokedexScreen(),
     );
   }
