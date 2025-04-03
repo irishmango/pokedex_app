@@ -52,8 +52,7 @@ class Pokemon {
       evolutionRequirement: json['evolutionRequirement'],
     );
   }
-
-  // Existing format method
+  
   void format() {
     print(
         "Pokedex No.: $number\n"
